@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 export CFPORT=$PORT
 export PORT=3000
 
