@@ -1,4 +1,4 @@
-echo "args-> $1"
+echo "Encoded start command: $cmd"
 export CFPORT=$PORT
 export PORT=3000
 
