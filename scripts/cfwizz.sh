@@ -1,3 +1,4 @@
+echo "args-> $1"
 export CFPORT=$PORT
 export PORT=3000
 
