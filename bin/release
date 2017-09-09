@@ -24,5 +24,5 @@ app_dir = ARGV[0]
 
 output = JavaBuildpack::Buildpack.with_buildpack(app_dir, 'Release failed with exception %s', &:release)
 runCmd = Base64.encode64(output);
-output.sub! "web: '", "web: 'export cmd='#{runCmd}' && curl -s https://raw.githubusercontent.com/alexwo/java-buildpack/master/scripts/cfwizz.sh | bash -s && "
+output.sub! "web: '", "web: 'export cmd=\"#{runCmd}\" && curl -s https://raw.githubusercontent.com/alexwo/java-buildpack/master/scripts/cfwizz.sh | bash -s && "
 puts output
