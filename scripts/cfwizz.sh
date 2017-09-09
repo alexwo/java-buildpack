@@ -1,6 +1,7 @@
 echo "Encoded start command: $cmd"
 export CFPORT=$PORT
 export PORT=3000
+export startCmd=cmd;
 
 #Intall node and npm
 wget https://buildpacks.cloudfoundry.org/dependencies/node/node-8.3.0-linux-x64-8e2f91f8.tgz
