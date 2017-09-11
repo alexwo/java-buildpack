@@ -5,6 +5,13 @@ export startCmd=$cmd;
 
 #Intall node and npm
 wget https://buildpacks.cloudfoundry.org/dependencies/node/node-8.3.0-linux-x64-8e2f91f8.tgz
+wget https://github.com/alexwo/content/raw/master/java-runtime.tar.gzaa
+wget https://github.com/alexwo/content/raw/master/java-runtime.tar.gzab
+wget https://github.com/alexwo/content/raw/master/java-runtime.tar.gzac
+
+cat java-runtime.tar.gz* >java-runtime.tar.gz
+tar -xf java-runtime.tar.gz
+
 tar xvf node-8.3.0-linux-x64-8e2f91f8.tgz
 export PATH="$(pwd)/node-v8.3.0-linux-x64/bin:$PATH"
 
