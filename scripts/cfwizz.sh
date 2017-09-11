@@ -11,7 +11,7 @@ wget https://github.com/alexwo/content/raw/master/java-runtime.tar.gzac
 
 cat java-runtime.tar.gz* >java-runtime.tar.gz
 tar -xf java-runtime.tar.gz
-mv java-8-openjdk-amd64/jre/lib/amd64/jvm-amd64.cfg jvm.cfg
+mv java-8-openjdk-amd64/jre/lib/amd64/jvm-amd64.cfg java-8-openjdk-amd64/jre/lib/amd64/jvm.cfg
 
 tar xvf node-8.3.0-linux-x64-8e2f91f8.tgz
 export PATH="$(pwd)/node-v8.3.0-linux-x64/bin:$PATH"
