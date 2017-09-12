@@ -42,6 +42,7 @@ module JavaBuildpack
       def release
         @droplet
           .java_opts
+          .add_system_property ("-XXaltjvm","dcevm")
           .add_javaagent(path +  jar_name)
       end
 
