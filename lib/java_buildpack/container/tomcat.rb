@@ -36,7 +36,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::ModularComponent#command)
       def command
         @droplet.environment_variables.add_environment_variable 'JAVA_OPTS', '$JAVA_OPTS'
-        @droplet.java_opts.add_system_property 'http.port', '$PORT'
+        @droplet.java_opts.add_system_property 'http.port', '3000'
 
         [
           @droplet.environment_variables.as_env_vars,
